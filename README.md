@@ -15,6 +15,38 @@
 以下是一个示例
 # 获取放下即执行的创造优化命令方块
 指令中包含了一些地毯端的优化
+禁用生成、锁定时间天气，优化、假人等等
+summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:redstone_block},Passengers:[{id:armor_stand,Health:0,Passengers:[{id:falling_block,Time:1,BlockState:{Name:activator_rail},Passengers:[
+{id:command_block_minecart,Command:'gamerule commandBlockOutput false'},
+{id:command_block_minecart,Command:'data merge block ~ ~-2 ~ {auto:0}'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoClip true'},
+{id:command_block_minecart,Command:'carpet setDefault language zh_cn'},
+{id:command_block_minecart,Command:'carpet setDefault fillLimit 1000000'},
+{id:command_block_minecart,Command:'carpet setDefault smoothClientAnimations true'},
+{id:command_block_minecart,Command:'gamerule doMobSpawning false'},
+{id:command_block_minecart,Command:'gamerule doDaylightCycle false'},
+{id:command_block_minecart,Command:'time set noon'},
+{id:command_block_minecart,Command:'gamerule doWeatherCycle false'},
+{id:command_block_minecart,Command:'carpet setDefault antiCheatDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault antiSpamDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault accurateBlockPlacement true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoItemCooldown true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeOpenContainerForcibly true'},
+{id:command_block_minecart,Command:'carpet setDefault defaultLoggers mobcaps'},
+{id:command_block_minecart,Command:'carpet setDefault syncServerMsptMetricsData true'},
+{id:command_block_minecart,Command:'carpet setDefault persistentLoggerSubscription true'},
+{id:command_block_minecart,Command:'carpet setDefault fastRedstoneDust true'},
+{id:command_block_minecart,Command:'carpet setDefault lagFreeSpawning true'},
+{id:command_block_minecart,Command:'carpet setDefault ctrlQCraftingFix true'},
+{id:command_block_minecart,Command:'carpet setDefault entityBrainMemoryUnfreedFix true'},
+{id:command_block_minecart,Command:'carpet setDefault openFakePlayerInventory true'},
+{id:command_block_minecart,Command:'carpet setDefault fakePlayerResident true'},
+{id:command_block_minecart,Command:'say 初始化完成'},
+{id:command_block_minecart,Command:'setblock ~ ~1 ~ command_block{auto:1,Command:"fill ~ ~ ~ ~ ~-3 ~ air"}'},
+{id:command_block_minecart,Command:'kill @e[type=command_block_minecart,distance=..1]'}
+]}]}]}
+# 获取放下即执行的创造优化命令方块
+可以保存物品栏中以备多存档使用
 /give @p command_block{display:{Name:'{"text":"创造用一键命令","color":"gold","bold":true,"italic":false}'},BlockEntityTag:{Command:"summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:redstone_block},
 Passengers:[{id:armor_stand,Health:0,
 Passengers:[{id:falling_block,Time:1,BlockState:{Name:activator_rail},
@@ -41,6 +73,74 @@ Passengers:[
 {id:command_block_minecart,Command:'carpet setDefault lagFreeSpawning true'},
 {id:command_block_minecart,Command:'carpet setDefault ctrlQCraftingFix true'},
 {id:command_block_minecart,Command:'carpet setDefault entityBrainMemoryUnfreedFix true'},
+{id:command_block_minecart,Command:'carpet setDefault openFakePlayerInventory true'},
+{id:command_block_minecart,Command:'carpet setDefault fakePlayerResident true'},
 {id:command_block_minecart,Command:'say 创造设置初始化完成'},
 {id:command_block_minecart,Command:'setblock ~ ~1 ~ command_block{auto:1,Command:\"fill ~ ~ ~ ~ ~-3 ~ air\"}'},
-{id:command_block_minecart,Command:'kill @e[type=command_block_minecart,distance=..1]'}]}]}]}",auto:1b}}
+{id:command_block_minecart,Command:'kill @e[type=command_block_minecart,distance=..1]'}]}]}]}
+",auto:1b}}
+
+# 生存一键
+一些优化选项，也包含创造穿墙等不会影响生存模式的选项，（总之无影响就一道优化了）
+summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:redstone_block},
+Passengers:[
+{id:armor_stand,Health:0,
+Passengers:[
+{id:falling_block,Time:1,BlockState:{Name:activator_rail},
+Passengers:[
+{id:command_block_minecart,Command:'gamerule commandBlockOutput false'},
+{id:command_block_minecart,Command:'data merge block ~ ~-2 ~ {auto:0}'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoClip true'},
+{id:command_block_minecart,Command:'carpet setDefault language zh_cn'},
+{id:command_block_minecart,Command:'carpet setDefault fillLimit 1000000'},
+{id:command_block_minecart,Command:'carpet setDefault xpNoCooldown true'},
+{id:command_block_minecart,Command:'carpet setDefault antiCheatDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault antiSpamDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault accurateBlockPlacement true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoItemCooldown true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeOpenContainerForcibly true'},
+{id:command_block_minecart,Command:'carpet setDefault defaultLoggers mobcaps'},
+{id:command_block_minecart,Command:'carpet setDefault syncServerMsptMetricsData true'},
+{id:command_block_minecart,Command:'carpet setDefault persistentLoggerSubscription true'},
+{id:command_block_minecart,Command:'carpet setDefault fastRedstoneDust true'},
+{id:command_block_minecart,Command:'carpet setDefault lagFreeSpawning true'},
+{id:command_block_minecart,Command:'carpet setDefault ctrlQCraftingFix true'},
+{id:command_block_minecart,Command:'carpet setDefault entityBrainMemoryUnfreedFix true'},
+{id:command_block_minecart,Command:'carpet setDefault openFakePlayerInventory true'},
+{id:command_block_minecart,Command:'carpet setDefault fakePlayerResident true'},
+{id:command_block_minecart,Command:'say 生存设置初始化完成'},
+{id:command_block_minecart,Command:'setblock ~ ~1 ~ command_block{auto:1,Command:"fill ~ ~ ~ ~ ~-3 ~ air"}'},
+{id:command_block_minecart,Command:'kill @e[type=command_block_minecart,distance=..1]'}]}]}]}
+# 获取放下即执行的生存优化命令方块
+可以保存物品栏中以备多存档使用
+/give @p command_block{display:{Name:'{"text":"生存用一键命令","color":"light_purple","bold":true,"italic":false}'},BlockEntityTag:{Command:"
+summon falling_block ~ ~1 ~ {Time:1,BlockState:{Name:redstone_block},
+Passengers:[{id:armor_stand,Health:0,
+Passengers:[{id:falling_block,Time:1,BlockState:{Name:activator_rail},
+Passengers:[
+{id:command_block_minecart,Command:'gamerule commandBlockOutput false'},
+{id:command_block_minecart,Command:'data merge block ~ ~-2 ~ {auto:0}'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoClip true'},
+{id:command_block_minecart,Command:'carpet setDefault language zh_cn'},
+{id:command_block_minecart,Command:'carpet setDefault fillLimit 1000000'},
+{id:command_block_minecart,Command:'carpet setDefault xpNoCooldown true'},
+{id:command_block_minecart,Command:'carpet setDefault antiCheatDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault antiSpamDisabled true'},
+{id:command_block_minecart,Command:'carpet setDefault accurateBlockPlacement true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeNoItemCooldown true'},
+{id:command_block_minecart,Command:'carpet setDefault creativeOpenContainerForcibly true'},
+{id:command_block_minecart,Command:'carpet setDefault defaultLoggers mobcaps'},
+{id:command_block_minecart,Command:'carpet setDefault syncServerMsptMetricsData true'},
+{id:command_block_minecart,Command:'carpet setDefault persistentLoggerSubscription true'},
+{id:command_block_minecart,Command:'carpet setDefault fastRedstoneDust true'},
+{id:command_block_minecart,Command:'carpet setDefault lagFreeSpawning true'},
+{id:command_block_minecart,Command:'carpet setDefault ctrlQCraftingFix true'},
+{id:command_block_minecart,Command:'carpet setDefault entityBrainMemoryUnfreedFix true'},
+{id:command_block_minecart,Command:'carpet setDefault openFakePlayerInventory true'},
+{id:command_block_minecart,Command:'carpet setDefault fakePlayerResident true'},
+{id:command_block_minecart,Command:'say 生存设置初始化完成'},
+{id:command_block_minecart,Command:'setblock ~ ~1 ~ command_block{auto:1,Command:\"fill ~ ~ ~ ~ ~-3 ~ air\"}'},
+{id:command_block_minecart,Command:'kill @e[type=command_block_minecart,distance=..1]'}]}]}]}
+",auto:1b}}
+
+
